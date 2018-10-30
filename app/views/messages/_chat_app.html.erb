@@ -1,0 +1,60 @@
+<div class='col-3 messages-sidebar border-right'>
+
+  <header class='sidebar-header'>
+    <h2 class="hidden-xs noselect">MESSAGES</h2><ul
+    class="actions messages-icons noselect float-right">
+      <li>
+        <i class="material-icons nopointer">messages</i>
+      </li>
+    </ul>
+  </header>
+
+  <div class='sidebar-users'>
+    <%= render 'messages/chat_sidebar', locals: { users: @users } %>
+  </div>
+</div>
+
+<div class='col-9 messages-body'>
+
+  <header class='message-header'>
+    <div class='user-icon noselect' style='display:inline-block;'>
+      <%= @user2.username[0].titleize %>
+    </div><h2>
+      <%= @user2.username %>
+    </h2>
+    <ul class="actions messages-icons noselect">
+      <li>
+        <%= link_to '' do %>
+          <i class="material-icons">refresh</i>
+        <% end %>
+      </li>
+    </ul>
+  </header>
+
+  <div>
+    <div class='messages'>
+      <%= render 'messages/chat_user_messages', locals: { messages: @messages } %>
+      <% if @auto_message %>
+        <%= render 'messages/system_message' %>
+      <% end %>
+    </div>
+
+    <%= form_with scope: :message,
+                  url: ('/home/' + @user2.id.to_s), local: true do |f| %>
+      <div class="row">
+        <%= f.hidden_field :user1, value: @user.username %>
+        <%= f.hidden_field :user2, value: @user2.username %>
+        <div class='col-11'>
+          <%= f.text_area :body, placeholder: "Type a message...", class: 'reply' %>
+        </div>
+        <div class='col-1 nopadding'>
+          <%= f.button '', class: 'send' do %>
+            <i class="material-icons">send</i>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+
+  </div>
+
+</div>

@@ -1,0 +1,27 @@
+<% @messages.each do |message| %>
+  <% if @user.username == message.user1 %>
+
+    <div class='right-message'>
+      <div class='margin-bottom'>
+        <span class='yellow'><%= message.body %></span>
+      </div>
+      <small>
+        <%= message.created_at
+            .in_time_zone('Pacific Time (US & Canada)')
+            .strftime(" %I:%M %p") %>
+      </small>
+    </div>
+
+  <% else %>
+
+    <div class='left-message'>
+      <div class='margin-bottom'>
+        <span class='grey'><%= message.body %></span>
+      </div>
+      <small>
+        <%= message.created_at.strftime(" %I:%M %p")%>
+      </small>
+    </div>
+
+  <% end %>
+<% end %>

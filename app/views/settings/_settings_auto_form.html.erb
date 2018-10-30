@@ -1,0 +1,37 @@
+<%= form_with scope: :setting, url: '/home/auto',
+                               method: 'put', local: true do |f| %>
+
+  <div class='row'>
+
+    <div class='col-4'>
+      <h2 class='padding'>Automated Messages</h2>
+    </div>
+
+    <div class='col-8'>
+      <div class='form-group fg-line time'>
+        <%= f.text_field :duration,
+                  value: @message.duration.strftime("%H:%M:%S"),
+                  class: 'form-control input-mask timebutton',
+                  data: {mask: '00:00:00'},
+                  placeholder: 'eg: 1-10',
+                  id: 'text',
+                  readonly: true %>
+      </div>
+      <%= render 'settings/time_picker' %>
+    </div>
+
+  </div>
+
+  <div class="form-group padding">
+      <div class="fg-line">
+        <%= f.text_area :body, value: @message.body,
+                  class: 'form-control auto-size',
+                  placeholder: 'Message from the automated system' %>
+      </div>
+  </div>
+
+  <div class="padding" style='text-align:right;margin-top:-30px;'>
+    <%= f.submit 'update', class: 'form-button' %>
+  </div>
+
+<% end %>

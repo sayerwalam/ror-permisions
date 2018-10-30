@@ -1,0 +1,2 @@
+module MaterialAdminHelper
+end

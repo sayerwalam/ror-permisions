@@ -1,0 +1,338 @@
+//*= require animate
+//*= require sweetalert2
+@import "material";
+@import "https://fonts.googleapis.com/icon?family=Material+Icons";
+@import "jquery.mCustomScrollbar";
+@import 'bootstrap-datetimepicker';
+
+.timebutton {
+  padding: 10px;
+  font: 20px Courier New;
+  color: #1abc9c;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  width: 100%;
+  letter-spacing: 20px;
+  transition: 0.3s;
+  text-align: center;
+}
+
+.button:hover { background-color: #1abc9c; color: white; }
+.custom-timepicker { 
+  visibility: hidden; 
+  font-family: verdana, sans-serif; 
+}
+.custom-timepicker ul { list-style-type:none; }
+
+.custom-timepicker .time {
+   padding: 70px 25px;
+   width: 97%;
+   background: #1abc9c;
+   text-align: center;
+}
+.custom-timepicker .time { font-size: 18px; }
+
+.custom-timepicker .time ul {
+   margin: 0;
+   padding: 0;
+}
+
+.custom-timepicker .time ul li {
+     color: white;
+     font-size: 20px;
+     text-transform: uppercase;
+     letter-spacing: 3px;
+}
+
+.custom-timepicker .time .prev {
+     padding-top: 10px;
+     cursor: pointer;    
+     transition: 0.3s;
+}
+.custom-timepicker .time .prev:hover { opacity: 0.5; }
+
+.custom-timepicker .time .next {
+     padding-bottom: 10px;
+     cursor: pointer;    
+     transition: 0.3s;
+}
+.custom-timepicker .time .next:hover { opacity: 0.5; }
+
+.noselect {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.btn-login {
+  min-width: 50px;
+  max-width: 50px;
+  font-size: 14px !important;
+}
+
+.checkbox label {
+  font-size: 12px;
+  color: black;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.noselect {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.checkbox .input-helper::after {
+  content: '\2713' !important;
+}
+
+.user-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgb(33, 150, 243);
+  color: white;
+  font-size: 25px;
+  text-align: center;
+  line-height: 40px;
+  padding-top: 1px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  box-sizing: content-box;
+}
+
+.messages-sidebar {
+  padding-right: 0px !important;
+  padding-left: 15px !important;
+}
+
+.messages-body {
+  padding-left: 0px !important;
+  padding-right: 15px !important;
+}
+
+.sidebar-header {
+  border-bottom: 1px #eee solid;
+  padding: 20px;
+  padding-top: 25px;
+  height: 64px;
+  max-height: 64px;
+}
+
+.message-header {
+  border-bottom: 1px #eee solid;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 10px;
+  padding-right: 0px;
+}
+
+.card { min-width: 404px !important; }
+header h2 {
+  font-size: 15px;
+  line-height: 15px;
+  display: inline-block;
+  margin: 0px;
+  padding: 0px;
+  padding-left: 10px;
+}
+
+header .messages-icons {
+  display: inline-block;
+  line-height: 15px;
+  cursor: pointer;
+  margin: 0px;
+  padding: 0px;
+  max-height: 15px;
+  max-width: 20px;
+}
+
+.sidebar-users { padding-bottom: 20px; }
+.border-right { border-right: 1px lightgrey solid; }
+.border-bottom { border-bottom: 1px lightgrey solid; }
+.border-top { border-top: 1px lightgrey solid; }
+.sidebar-user {
+  padding: 15px 20px;
+  margin-right: 0px;
+}
+
+.sidebar-user a { cursor: pointer; }
+.sidebar-user:hover { background-color: #eee; }
+.sidebar-user h2 {
+  font-size: 15px;
+  line-height: 15px;
+  display: inline-block;
+  margin: 0px;
+  padding: 0px;
+  padding-left: 10px;
+}
+
+.messages {
+  min-height: 400px;
+  max-height: 400px;
+  padding: 20px;
+  padding-right: 0px;
+  border-bottom: 1px lightgrey solid;
+  overflow: auto;
+}
+
+.reply {
+  background-color: rgb(238, 238, 238);
+  color: black;
+  margin: 10px;
+  outline: none;
+  border: none;
+  padding: 10px;
+  resize: none;
+  display: inline-block;
+  max-height: 50px;
+  width: 100%;
+  border-radius: 2px;
+}
+
+.send {
+  background-color: transparent;
+  outline: none;
+  border: none;
+  padding: 0px;
+  font-size: 20px;
+  width: 25px;
+  margin-top: 20px;
+}
+
+.nopadding { padding: 0px !important; }
+.padding { padding: 10px 20px !important; }
+.right-message small { padding-right: 20px; }
+.left-message small { padding-left: 20px; }
+.margin-bottom { margin-bottom: 15px; }
+.right-align { text-align: right; }
+
+.right-message {
+  text-align: right;
+  color: grey;
+  padding-right: 20px;
+  margin-bottom: 15px;
+}
+
+.left-message {
+  text-align: left;
+  color: grey;
+  margin-bottom: 15px;
+}
+
+.center-message {
+  text-align: center;
+  color: grey;
+  margin-bottom: 15px;
+}
+
+.yellow {
+  background-color: rgb(255, 193, 7);
+  color: white;
+  border-radius: 2px;
+  padding: 10px 20px;
+}
+
+.grey {
+  background-color: rgb(238, 238, 238);
+  color: black;
+  border-radius: 2px;
+  padding: 10px 20px;
+}
+
+.green {
+  background-color: limegreen;
+  color: white;
+  border-radius: 2px;
+  padding: 10px 20px;
+}
+
+.settings-users {
+  max-height: 200px;
+  height: 200px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.form-button {
+  outline: green;
+  border: green;
+  background-color: limegreen;
+  color: white;
+  padding: 5px 10px;
+  margin-top: -5px;
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
+.form-button:hover {
+  box-shadow: 0px 0px 5px #888;
+}
+
+.nopointer {
+  cursor: default;
+}
+
+.float-right {
+  float: right;
+}
+
+.float-left {
+  float: left;
+}
+
+.time {
+  margin-top:20px;
+  margin-right:20px;
+}
+
+.shadow {
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  min-height: 100%;
+  background-color: black;
+  opacity: 0.5;
+  z-index: 1;
+}
+
+.popup {
+  border-radius: 2px;
+  border: 1px red solid;
+  position: absolute;
+  background-color: white;
+  color: red;
+  min-height: 200px;
+  z-index: 2;
+  width: 20%;
+  margin-left: 45%;
+  margin-top: 300px;
+}
+
+.close {
+  float: right;
+  margin-right: 10px;
+  color: red;
+  font-size: 30px !important;
+}
+
+.close:hover { color: grey; }
+#error_explanation {
+  color: red;
+  font-size: 20px;
+  padding: 10px;
+  text-align: center;
+  margin-top: 15px;
+}

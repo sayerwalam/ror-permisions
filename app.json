@@ -1,0 +1,8 @@
+{
+  "name": "Messaging App",
+  "description": "A messaging web application written in Ruby on Rails",
+  "image": "heroku/ruby",
+  "repository": "https://github.com/anagabriel42/ror-permissions",
+  "keywords": ["ruby", "rails" ],
+  "addons": ["heroku-postgresql"]
+}

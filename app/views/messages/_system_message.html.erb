@@ -1,0 +1,17 @@
+<div id='system' class='center-message' hidden>
+  <div class='margin-bottom'>
+    <span class='green'><%= @body %></span>
+    <div id='timer' hidden>
+      <%= @auto_message.duration.strftime("%S") %>
+    </div>
+  </div>
+</div>
+
+<script>
+function unhide() {
+  var sys = document.getElementById('system');
+  sys.removeAttribute('hidden');
+}
+
+setTimeout(unhide, parseInt($('#timer').text()) * 1000);
+</script>

@@ -1,0 +1,47 @@
+<div class="custom-timepicker">
+    <div class="time">
+        <ul>
+            <li class="next noselect"> + </li>
+            <li id="seconds">
+              <%= @message.duration.strftime("%S") %>
+            </li>
+            <li class="prev noselect"> - </li>
+        </ul>
+    </div>
+</div>
+
+<script>
+  var seconds = parseInt($('#seconds').text());
+
+  $(".timebutton").click(function() {
+  if($(".custom-timepicker").css("visibility") === "hidden"){
+      $(".custom-timepicker").css("visibility", "visible");
+    } else {
+      $(".custom-timepicker").fadeToggle();
+    }
+  });
+
+   $(".next").on("click", function() {
+      if (seconds > 9) return;
+      seconds++;
+      updateInput(seconds);
+  });
+
+  $(".prev").on("click", function() {
+    if (seconds < 1) return;
+    seconds--;
+    updateInput(seconds);
+  });
+
+  function updateInput(seconds) {
+    if (seconds < 10) {
+      $("#text").val('00:00:0' + seconds);
+      $('#seconds').text(seconds);
+    } else {
+      $("#text").val('00:00:' + seconds);
+      $('#seconds').text(seconds);
+    }
+
+    $("#text").attr('data-mask', '00:00:00');
+  }
+</script>
