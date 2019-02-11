@@ -1,0 +1,29 @@
+<body style=" background-color: #32DDDA;">
+  <table align="center" border="1" style="margin-top: 200px;">
+    <tr>
+      <td>  <h3> First Name : </h3> </td>
+      <td> <h3> <%= session[:first_name].titleize %> </h3> </td>
+    </tr>
+    <tr>
+      <td> <h3> Last Name : </h3> </td>
+      <td> <h3> <%= session[:last_name].titleize %> </h3> </td>
+    </tr>
+    <tr>
+      <td> <h3> DOB :</h3> </td>
+      <td> <h3> <%= session[:dob].titleize %> </h3> </td>
+    </tr>
+    <tr>
+      <td> <h3> Email : </h3> </td>
+      <td> <h3> <%= session[:email].titleize %> </h3> </td>
+    </tr>
+    <tr>
+      <td colspan="2" style="text-align: center;"> <h3>
+         <%= link_to '/logout', method: "get" do %>
+             <i class="material-icons">logout</i>
+                LOGOUT
+              <% end %> </h3>
+     </td>
+      
+    </tr>
+  </table>
+</body>

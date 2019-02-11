@@ -1,22 +1,12 @@
-<% if params.has_key?(:notice) %>
-    <%= "#{ params['notice']}" %>
-    <% end %>
-    <% if @user.errors != nil && @user.errors.any? %>
-            <ul class="Signup_Errors">
-                <% for message_error in @user.errors.full_messages %>
-                    <li>* <%= message_error %></li>
-                <% end %>
-             </ul>
-        <% end %>
 <div class="login-content">
     <!-- Login -->
-    <div class="lc-block toggled" id="l-login">
+     <div class="lc-block toggled" id="l-login">
         <%= form_with scope: :user, url: '/login', local: true do |f| %>
         <div class="lcb-form">
           <h1 class="title">SIGN IN</h1>
             <div class="form-group">
                 <div class="fg-line">
-                    <%= f.text_field :username, :class => "form-control", :placeholder => 'Username', :required => true %>
+                    <%= f.text_field :email, :class => "form-control", :placeholder => 'Email', :required => true %>
                 </div>
             </div>
 
@@ -26,13 +16,6 @@
                 </div>
             </div>
 
-            <div class="checkbox">
-                <label>
-                    <input type="checkbox" value="">
-                    <i class="input-helper"></i>
-                    Keep me signed in
-                </label>
-            </div>
              <%= f.button :submit, :class => 'btn btn-login btn-success' do %>
               <i class="material-icons">arrow_forward</i>
             <% end %>
@@ -52,7 +35,22 @@
           <h1 class="title">SIGN UP</h1>
             <div class="form-group">
                 <div class="fg-line">
-                    <%= f.text_field :username, :class => 'form-control', :placeholder => "Username", :required => true %>
+                    <%= f.text_field :first_name, :class => 'form-control', :placeholder => "First Name", :required => true %>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="fg-line">
+                    <%= f.text_field :last_name, :class => 'form-control', :placeholder => "Last Name", :required => true %>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="fg-line">
+                    <%= f.text_field :dob, :class => 'form-control', :placeholder => "mm/dd/yyyy", :required => true %>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="fg-line">
+                    <%= f.text_field :email, :class => 'form-control', :placeholder => "Email", :required => true %>
                 </div>
             </div>
             <div class="form-group">
@@ -60,13 +58,10 @@
                     <%= f.password_field :password, :class => 'form-control', :placeholder => "Password", :required => true %>
                 </div>
             </div>
-            <%= f.hidden_field :permission, :value => 1 %>
-            <div class="checkbox">
-                <label>
-                    <input type="checkbox" value="check" id="check" name="check">
-                    <i class="input-helper"></i>
-                    Terms and Condition
-                </label>
+            <div class="form-group">
+                <div class="fg-line">
+                    <%= f.password_field :password_confirmation, :class => 'form-control', :placeholder => "Password Confirmation", :required => true %>
+                </div>
             </div>
             <%= f.button :submit, :class => 'btn btn-login btn-success' do %>
               <i class="material-icons">check</i>

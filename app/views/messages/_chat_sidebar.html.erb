@@ -1,9 +1,0 @@
-<% @users.each do |user| %>
-  <div class='sidebar-user noselect'>
-    <%= link_to ('/home/' + user.id.to_s) do %>
-      <div class='user-icon noselect' style='display:inline-block;'>
-        <%= user.username[0].titleize %>
-      </div><h2 class='hidden-xs'><%= user.username.titleize %></h2>
-    <% end %>
-  </div>
-<% end %>
